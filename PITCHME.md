@@ -1,6 +1,7 @@
 # Editor VI
 
 ---
+
 ![estats](/assets/pics/estats-vi.png)
 
 ---
@@ -33,6 +34,7 @@
 - buscar cadenes de caracters
 
 ---
+
 # transició entre estats
 ## al mode ordre vaig amb [esc]
 ## al mode edició amb [a],[i],[o]
