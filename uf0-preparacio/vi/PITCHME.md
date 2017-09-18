@@ -2,7 +2,7 @@
 
 ---
 
-![estats](smxm7/uf0-preparacio/vi/assets/pics/estats-vi.png)
+![estats](uf0-preparacio/vi/assets/pics/estats-vi.png)
 
 ---
 
