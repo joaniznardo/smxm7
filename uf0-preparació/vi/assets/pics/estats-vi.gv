@@ -1,0 +1,8 @@
+ digraph G {
+  inici -> ordre[label="  iniciar vi  "];
+  ordre -> edició[label="  i | a | I | A | o | O  "];
+  edició -> ordre[label="  [esc]  "];
+  ordre ->  "última línia"[label="  :  "];
+  "última línia" -> ordre[label="  [esc]  "];
+  "última línia" ->fi[label="  :x | :q  "];
+ }
