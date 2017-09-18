@@ -2,7 +2,7 @@
 
 ---
 
-![estats](assets/pics/estats-vi.png)
+![estats](https://github.com/joaniznardo/smxm7/raw/master/uf0-preparacio/vi/assets/pics/estats-vi.png)
 
 ---
 
