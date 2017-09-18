@@ -23,7 +23,7 @@
 ---
 
 # mode edició 
-##el que tecleges apareix
+## el que tecleges apareix
 
 ---
 
