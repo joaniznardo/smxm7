@@ -2,7 +2,7 @@
 
 ---
 
-![estats](uf0-preparacio/vi/assets/pics/estats-vi.png)
+![estats](assets/pics/estats-vi.png)
 
 ---
 
