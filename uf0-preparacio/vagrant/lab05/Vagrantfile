@@ -49,8 +49,8 @@ Vagrant.configure("2") do |config|
 ##  config.ssh.username = "smxm7"
 
 # Install avahi on all machines     
-  config.vm.provision "shell", inline: <<-SHELL
-     apt-get install -y avahi-daemon libnss-mdns   
-  SHELL
+#  config.vm.provision "shell", inline: <<-SHELL
+#     apt-get install -y avahi-daemon libnss-mdns   
+#  SHELL
 
 end

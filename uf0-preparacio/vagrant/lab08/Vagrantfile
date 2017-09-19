@@ -1,0 +1,78 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+
+BOX_IMAGE = "bento/ubuntu-16.04"
+VBVM_MEMORY = 512
+VBVM_NAME01 = "lab06vm1"
+VBVM_NAME02 = "lab06vm2"
+VBVM_NAME03 = "lab06vm3"
+VBVM_NAME04 = "lab06vm4"
+VBVM_NAME05 = "lab06vm5"
+VBVM_NAME06 = "lab06vm6"
+VM_HOSTNAME01 = "vm1"
+VM_HOSTNAME02 = "vm2"
+VM_HOSTNAME03 = "vm3"
+VM_HOSTNAME04 = "vm4"
+VM_HOSTNAME05 = "vm5"
+VM_HOSTNAME06 = "vm6"
+
+Vagrant.configure("2") do |config|
+  config.vm.define VM_HOSTNAME01 do |subconfig|
+    subconfig.vm.box = BOX_IMAGE
+    subconfig.vm.hostname = VM_HOSTNAME01 
+    subconfig.vm.network :private_network, ip: "172.16.1.1"
+    
+    subconfig.vm.provider "virtualbox" do |vb|
+       vb.name = VBVM_NAME01 
+       vb.memory = VBVM_MEMORY
+       vb.linked_clone = true
+    end
+  end
+
+  config.vm.define VM_HOSTNAME02 do |subconfig|
+    subconfig.vm.box = BOX_IMAGE
+    subconfig.vm.hostname = VM_HOSTNAME02 
+    subconfig.vm.network :private_network, ip: "172.16.1.2"
+    
+    subconfig.vm.provider "virtualbox" do |vb|
+       vb.name = VBVM_NAME02 
+       vb.memory = VBVM_MEMORY
+       vb.linked_clone = true
+    end
+  end
+
+  config.vm.define VM_HOSTNAME03,  autostart: false do |subconfig|
+    subconfig.vm.box = BOX_IMAGE
+    subconfig.vm.hostname = VM_HOSTNAME03 
+    subconfig.vm.network :private_network, ip: "172.16.1.3"
+    
+    subconfig.vm.provider "virtualbox" do |vb|
+       vb.name = VBVM_NAME03 
+       vb.memory = VBVM_MEMORY
+       vb.linked_clone = true
+    end
+  end
+
+  config.vm.define VM_HOSTNAME04, autostart: false do |subconfig|
+    subconfig.vm.box = BOX_IMAGE
+    subconfig.vm.hostname = VM_HOSTNAME04 
+    subconfig.vm.network :private_network, ip: "172.16.1.4"
+    
+    subconfig.vm.provider "virtualbox" do |vb|
+       vb.name = VBVM_NAME04 
+       vb.memory = VBVM_MEMORY
+       vb.linked_clone = true
+    end
+   end
+
+# Install avahi on all machines     
+##  config.vm.provision "shell", inline: <<-SHELL
+##     apt-get install -y avahi-daemon libnss-mdns   
+##  SHELL
+
+end
