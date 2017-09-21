@@ -21,7 +21,6 @@ VM_HOSTNAME04 = "vm4"
 VM_HOSTNAME05 = "vm5"
 VM_HOSTNAME06 = "vm6"
 
-
 Vagrant.configure("2") do |config|
   config.vm.define VM_HOSTNAME01 do |subconfig|
     subconfig.vm.box = BOX_IMAGE
