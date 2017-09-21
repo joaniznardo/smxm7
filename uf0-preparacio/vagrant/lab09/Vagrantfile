@@ -1,0 +1,85 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+
+BOX_IMAGE = "bento/ubuntu-16.04"
+VBVM_MEMORY = 512
+VBVM_NAME01 = "lab09vm1"
+VBVM_NAME02 = "lab09vm2"
+VBVM_NAME03 = "lab09vm3"
+VBVM_NAME04 = "lab09vm4"
+VBVM_NAME05 = "lab09vm5"
+VBVM_NAME06 = "lab09vm6"
+VM_HOSTNAME01 = "vm1"
+VM_HOSTNAME02 = "vm2"
+VM_HOSTNAME03 = "vm3"
+VM_HOSTNAME04 = "vm4"
+VM_HOSTNAME05 = "vm5"
+VM_HOSTNAME06 = "vm6"
+IPIF1_HOST1 = "192.168.10.1"
+IPIF1_HOST2 = "192.168.10.2"
+IPIF2_HOST2 = "192.168.20.1"
+IPIF1_HOST3 = "192.168.20.2"
+XARXA1 = "lan1"
+XARXA2 = "lan2"
+
+Vagrant.configure("2") do |config|
+  config.vm.define VM_HOSTNAME01 do |subconfig|
+    subconfig.vm.box = BOX_IMAGE
+    subconfig.vm.hostname = VM_HOSTNAME01 
+    subconfig.vm.network :private_network, ip: IPIF1_HOST1, virtualbox__intnet: XARXA1
+    
+    subconfig.vm.provider "virtualbox" do |vb|
+       vb.name = VBVM_NAME01 
+       vb.memory = VBVM_MEMORY
+       vb.linked_clone = true
+    end
+  end
+
+  config.vm.define VM_HOSTNAME02 do |subconfig|
+    subconfig.vm.box = BOX_IMAGE
+    subconfig.vm.hostname = VM_HOSTNAME02 
+    subconfig.vm.network :private_network, ip: IPIF1_HOST2, virtualbox__intnet: XARXA1
+    subconfig.vm.network :private_network, ip: IPIF2_HOST2, virtualbox__intnet: XARXA2
+    
+    subconfig.vm.provider "virtualbox" do |vb|
+       vb.name = VBVM_NAME02 
+       vb.memory = VBVM_MEMORY
+       vb.linked_clone = true
+    end
+  end
+
+  config.vm.define VM_HOSTNAME03,  autostart: false do |subconfig|
+    subconfig.vm.box = BOX_IMAGE
+    subconfig.vm.hostname = VM_HOSTNAME03 
+    subconfig.vm.network :private_network, ip: IPIF1_HOST3, virtualbox__intnet: XARXA2
+    
+    subconfig.vm.provider "virtualbox" do |vb|
+       vb.name = VBVM_NAME03 
+       vb.memory = VBVM_MEMORY
+       vb.linked_clone = true
+    end
+  end
+
+  config.vm.define VM_HOSTNAME04, autostart: false do |subconfig|
+    subconfig.vm.box = BOX_IMAGE
+    subconfig.vm.hostname = VM_HOSTNAME04 
+    subconfig.vm.network :private_network, ip: "172.16.1.4"
+    
+    subconfig.vm.provider "virtualbox" do |vb|
+       vb.name = VBVM_NAME04 
+       vb.memory = VBVM_MEMORY
+       vb.linked_clone = true
+    end
+   end
+
+# Install avahi on all machines     
+##  config.vm.provision "shell", inline: <<-SHELL
+##     apt-get install -y avahi-daemon libnss-mdns   
+##  SHELL
+
+end
