@@ -8,12 +8,12 @@
 
 BOX_IMAGE = "bento/ubuntu-16.04"
 VBVM_MEMORY = 512
-VBVM_NAME01 = "lab09vm1"
-VBVM_NAME02 = "lab09vm2"
-VBVM_NAME03 = "lab09vm3"
-VBVM_NAME04 = "lab09vm4"
-VBVM_NAME05 = "lab09vm5"
-VBVM_NAME06 = "lab09vm6"
+VBVM_NAME01 = "lab10vm1"
+VBVM_NAME02 = "lab10vm2"
+VBVM_NAME03 = "lab10vm3"
+VBVM_NAME04 = "lab10vm4"
+VBVM_NAME05 = "lab10vm5"
+VBVM_NAME06 = "lab10vm6"
 VM_HOSTNAME01 = "vm1"
 VM_HOSTNAME02 = "vm2"
 VM_HOSTNAME03 = "vm3"
