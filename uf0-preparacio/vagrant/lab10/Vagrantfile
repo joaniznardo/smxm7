@@ -43,8 +43,7 @@ Vagrant.configure("2") do |config|
   config.vm.define VM_HOSTNAME02 do |subconfig|
     subconfig.vm.box = BOX_IMAGE
     subconfig.vm.hostname = VM_HOSTNAME02 
-    subconfig.vm.network :private_network, ip: IPIF1_HOST2, virtualbox__intnet: XARXA1
-    subconfig.vm.network :private_network, ip: IPIF2_HOST2, virtualbox__intnet: XARXA2
+    subconfig.vm.network :private_network, ip: IPIF1_HOST2, virtualbox__intnet: XARXA1, auto_config: false
     
     subconfig.vm.provider "virtualbox" do |vb|
        vb.name = VBVM_NAME02 
