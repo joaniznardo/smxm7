@@ -1,0 +1,27 @@
+    1  ip a
+    2  sudo apt-get update
+    3  sudo apt-get install isc-dhcp-server
+    4  history
+    5  vi /etc/default/isc-dhcp-server 
+    6  sudo cp /etc/default/isc-dhcp-server{,.ini}
+    7  vi /etc/default/isc-dhcp-server 
+    8  sudo vi /etc/default/isc-dhcp-server 
+    9  sudo systemctl list
+   10  sudo systemctl -l
+   11  man systemctl 
+   12  sudo systemctl restart isc-dhcp-server.service 
+   13  sudo cat /var/log/syslog | grep dhcpd
+   14  cat /vagrant/Vagrantfile 
+   15  less /etc/dhcp/dhcpd.conf 
+   16  sudo cp /etc/dhcp/dhcpd.conf{,.ini}
+   17  sudo vi /etc/dhcp/dhcpd.conf 
+   18  sudo systemctl restart isc-dhcp-server.service 
+   19  ipconfig
+   20  ip a
+   21  sudo vi /etc/dhcp/dhcpd.conf 
+   22  sudo systemctl restart isc-dhcp-server.service 
+   23  sudo systemctl stop isc-dhcp-server.service 
+   24  sudo systemctl start isc-dhcp-server.service 
+   25  exit
+   26  history
+   27  history > /vagrant/history.vm1
