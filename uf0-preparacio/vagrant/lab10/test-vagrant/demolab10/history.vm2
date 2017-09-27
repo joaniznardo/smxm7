@@ -1,9 +1,0 @@
-    1  ip a
-    2  systemctl list
-    3  systemctl list-units 
-    4  systemctl list-units --no-pager
-    5  systemctl list-units -t service--no-pager
-    6  systemctl list-units -t service --no-pager
-    7  less /etc/dhcp/dhclient.conf 
-    8  history 
-    9  history > /vagrant/history.vm2
