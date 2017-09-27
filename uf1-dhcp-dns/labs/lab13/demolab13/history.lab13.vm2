@@ -1,0 +1,13 @@
+    1  sudo apt-get update
+    2  sudo apt-get install isc-dhcp-server
+    3  sudo apt-get install -y isc-dhcp-server
+    4  ip a
+    5  sudo cp /etc/default/isc-dhcp-server{,.ini}
+    6  sudo vi /etc/default/isc-dhcp-server
+    7  sudo cp /etc/dhcp/dhcpd.conf{,.ini}
+    8  sudo vi /etc/dhcp/dhcpd.conf
+    9  sudo systemctl restart isc-dhcp-server
+   10  sudo vi /etc/dhcp/dhcpd.conf
+   11  sudo systemctl restart isc-dhcp-server
+   12  sudo vi /etc/dhcp/dhcpd.conf
+   13  history > /vagrant/history.lab13.vm2

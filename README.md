@@ -8,7 +8,7 @@ documentació i laboratoris per smxm7
 ## temari
 - [temari complet](https://gitlab.com/joanq/SMX-M7-Serveis)
 
-Al directori uf0-preparacio trobarem els diferents laboratoris inicials per tindre solvència en l'ús de vagrant.
+Al directori [uf0-preparacio](uf0-preparacio) trobarem els diferents laboratoris inicials per tindre solvència en l'ús de vagrant.
 
 ## teoria dhcp
 - [dhcp](https://gitlab.com/joanq/SMX-M7-Serveis/tree/master/UF1/dhcp)
