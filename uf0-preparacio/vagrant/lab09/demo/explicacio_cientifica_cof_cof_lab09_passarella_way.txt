@@ -1,0 +1,84 @@
+# lab09 resolució
+
+#
+# pas 01: assegurar-me que la info "surt" de la vm1
+#
+
+# demo des de vm1
+ping 192.168.20.2
+ping 8.8.8.8
+
+# sorpesa?
+
+# demo per on viatja la info
+sudo tcpdump -i enp0s8
+sudo tcpdump -i enp0s3
+
+# explicació
+route -n
+
+# canviem la passarel·la associada a la màquina vm1
+## la passarel·la és UNA IP A LA QUE POTS ARRIBAR (SÍ ESTIC CRIDANT)
+
+sudo route del default
+# ... i comprovar
+route -n
+
+sudo route add default gw 192.168.10.2
+# ... i comprovar un altre cop ("aguanta! se fuerte!")
+route -n
+
+# i torne a escoltar si "surt" la info per vm1
+# de nou des de vm1
+ping 192.168.20.2
+ping 8.8.8.8
+
+# not surprises here!
+
+# per on viatja la info (hauria d'haver canviat :) )
+sudo tcpdump -i enp0s8
+sudo tcpdump -i enp0s3
+
+#
+# pas 02: assegurar-me que la info "entra" i "surt" de la vm2
+#
+
+# ...mantenint el ping 192.168.20.2 des de vm1
+
+
+# arriba la info (hauria, no?)
+sudo tcpdump -i enp0s8
+sudo tcpdump -i enp0s9
+
+# sorpresa! (again)
+# no passa la info de una interfície a l'altra perquè per defecte no se traspassa la info entre interfícies
+
+sudo sysctl -w net.ipv4.ip_forward=1
+
+# passa ara? (miracle :) )
+sudo tcpdump -i enp0s9
+
+#
+# pas 03: assegurar-me que arriba a vm3
+#
+
+# arriba la info? (hauria, no?)
+sudo tcpdump -i enp0s8
+
+# big mystery!: perquè no torna????
+# solució: route -n és la clau
+
+route -n
+# toca canviar la passarella de nou
+sudo route del default
+# ... i comprovar
+route -n
+
+sudo route add default gw 192.168.10.2
+# ... i comprovar un altre cop ("aguanta! ...)
+route -n
+
+# i si tot ha anat bé
+# ta-xaaaaaaaannnnnnnnn!!!
+
+

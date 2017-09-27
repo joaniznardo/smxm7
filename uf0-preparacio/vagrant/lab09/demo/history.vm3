@@ -1,0 +1,8 @@
+    1  ip a
+    2  sudo tcpdump -i enp0s8
+    3  toutr -n
+    4  route -n
+    5  sudo route del default
+    6  route -n
+    7  sudo route add default gw 192.168.20.1
+    8  history > /vagrant/history.vm3

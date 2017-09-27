@@ -1,0 +1,6 @@
+    1  sudo tcpdump -i enp0s8
+    2  sudo tcpdump -i enp0s3
+    3  sudo tcpdump -i enp0s3 'icmp'
+    4  sudo tcpdump -i enp0s8 'icmp'
+    5  history
+    6  history > /vagrant/history.vm1.termb

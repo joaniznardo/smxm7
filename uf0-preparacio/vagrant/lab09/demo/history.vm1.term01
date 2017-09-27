@@ -1,0 +1,22 @@
+    1  /home/joan.iznardo/Documents/git5/smxm7/uf0-preparacio/vagrant/lab09
+    2  ping 192.168.20.2
+    3  ping 8.8.8.8
+    4  ping 192.168.20.2
+    5  route -n
+    6  ping 192.168.10.2
+    7  route -n
+    8  ping 10.0.2.2
+    9  route -n
+   10  ping -c 5192.168.10.6
+   11  ping -c 5 192.168.10.6
+   12  man route
+   13  sudo route del default
+   14  route -n
+   15  sudo route add default gw 192.168.10.2
+   16  route -n
+   17  ping 8.8.8.8
+   18  ping 192.168.20.2
+   19  route -n
+   20  ping 192.168.20.2
+   21  history
+   22  history > /vagrant/history.vm1.term_ppal
