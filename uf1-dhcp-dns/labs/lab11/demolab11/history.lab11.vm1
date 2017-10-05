@@ -1,0 +1,12 @@
+   10  sudo apt update
+   12  sudo apt install bash-completion
+   13  source /etc/bash_completion
+   14  sudo apt install isc-dhcp-server
+   16  service isc-dhcp-server status
+   17  sudo vi /etc/default/isc-dhcp-server 
+   18  sudo vi /etc/dhcp/dhcpd.conf 
+   20  sudo service isc-dhcp-server restart
+   21  sudo service isc-dhcp-server status
+   30  cp /etc/dhcp/dhcpd.conf /vagrant/demolab11/
+   31  cp /etc/default/isc-dhcp-server /vagrant/demolab11/
+   32  history | tee /vagrant/demolab11/history.lab11.vm1
