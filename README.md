@@ -15,8 +15,8 @@ Al directori [uf0-preparacio](uf0-preparacio) trobarem els diferents laboratoris
 
 Al directori uf1-dhcp-dns trobem els laboratoris següents:
 - [lab10](uf1-dhcp-dns/labs/lab10) - configuració d'un servidor de dhcp simple amb un únic client
-- lab11: configuració d'un servidor de dhcp simple servint una ip fixa a un únic client (per mac)
-- lab12: 1 server i 2 clients a la mateixa xarxa
+- [lab11](uf1-dhcp-dns/labs/lab11) -  configuració d'un servidor de dhcp simple servint una ip fixa a un únic client (per mac)
+- lab12: 1 server i 2 clients a la mateixa xarxa, un amb ip fixa io l'altre no.
 - [lab13](uf1-dhcp-dns/labs/lab13) -  1 server 2 xarxes 2 clients (un a cada xarxa)
 - lab14: 1 server 2 xarxes 4 clients (dos per xarxa i un de cada xarxa amb ip fixa)
 - lab15: 1 server 1 client directe (mateixa xarxa) 1 router 1 client a l'altra xarxa
