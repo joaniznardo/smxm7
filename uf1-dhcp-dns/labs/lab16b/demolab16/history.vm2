@@ -1,0 +1,17 @@
+    1  sudo apt update
+    2  sudo apt install bash-completion
+    3  source /etc/bash_completion
+    4  sudo apt install isc-dhcp-server
+    5  sudo vi /etc/default/isc-dhcp-server 
+    6  sudo mv /etc/dhcp/dhcpd.conf{,.ini}
+    7  sudo vi /etc/dhcp/dhcpd.conf
+    8  sudo service isc-dhcp-server status
+    9  sudo service isc-dhcp-server restart
+   10  sudo service isc-dhcp-server status
+   11  ip a
+   12  sudo vi /etc/dhcp/dhcpd.conf
+   13  sudo service isc-dhcp-server restart
+   14  sudo service isc-dhcp-server status
+   15  cp /etc/default/isc-dhcp-server /vagrant/isc-dhcp-server.vm2
+   16  cp /etc/dhcp/dhcpd.conf /vagrant/dhcpd.conf.vm2
+   17  history | tee /vagrant/history.vm2
