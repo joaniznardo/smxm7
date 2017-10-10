@@ -1,0 +1,15 @@
+    1  sudo apt update
+    2  sudo apt install bash-completion
+    3  source /etc/bash_completion
+    4  sudo apt install isc-dhcp-relay 
+    5  cat /etc/default/isc-dhcp-relay
+    6  exit
+    7  sudo tcpdump -i enp0s8
+    8  less /etc/sysctl.conf 
+    9  sudo vi /etc/sysctl.conf 
+   10  man sysctl 
+   11  sudo sysctl -p
+   12  sudo tcpdump -i enp0s8
+   13  history
+   14  cp /etc/sysctl.conf /vagrant/configfiles/sysctl.conf.vm2
+   15  history | tee /vagrant/historyfiles/history.vm2

@@ -1,0 +1,21 @@
+    1  sudo apt update
+    2  sudo apt install isc-dhcp-server
+    3  vi /etc/default/isc-dhcp-server 
+    4  sudo vi /etc/default/isc-dhcp-server 
+    5  /etc/default/isc-dhcp-server /vagrant/configfiles/isc-dhcp-server.vm1
+    6  cp /etc/default/isc-dhcp-server /vagrant/configfiles/isc-dhcp-server.vm1
+    7  sudo cp /etc/dhcp/dhcpd.conf{,.ini}
+    8  sudo vi /etc/dhcp/dhcpd.conf
+    9  sudo service isc-dhcp-server restart
+   10  sudo service isc-dhcp-server status
+   11  cp /etc/dhcp/dhcpd.conf /vagrant/configfiles/dhcpd.conf.vm1
+   12  exit
+   13  ip a
+   14  sudo tcpdump -i enp0s8
+   15  exit
+   16  route -n
+   17  route add -net 192.168.20.0 enp0s8
+   18  sudo route add -net 192.168.20.0 enp0s8
+   19  man route
+   20  sudo route add -net 192.168.20.0 netmask 255.255.255.0 dev enp0s8
+   21  history | tee /vagrant/historyfiles/history.vm1
