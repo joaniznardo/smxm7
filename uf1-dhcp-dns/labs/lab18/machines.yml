@@ -1,0 +1,86 @@
+---
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "lab18vm1"
+  vmauto: true
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.XXX.101"
+      xarxa: "lan01"
+      autostart: true
+  ram: "384"
+  vcpu: "1"
+  pscript: "bootstrapvm1.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "lab18vm2"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.XXX.102"
+      xarxa: "lan01"
+      autostart: true
+  ram: "384"
+  vcpu: "1"
+  pscript: "bootstrapvm2.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "lab18vm3"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "dhcp"
+      xarxa: "lan01"
+      autostart: false
+  ram: "384"
+  vcpu: "1"
+  pscript: "bootstrapvm3.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "lab18vm4"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.XXX.254"
+      xarxa: "lan01"
+      autostart: true
+    - type: "private_network"
+      ip_addr: "192.168.YYY.254"
+      xarxa: "lan02"
+      autostart: true
+    - type: "private_network"
+      ip_addr: "192.168.ZZZ.254"
+      xarxa: "lan03"
+      autostart: true
+  ram: "384"
+  vcpu: "1"
+  pscript: "bootstrapvm4.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "lab18vm5"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "dhcp"
+      xarxa: "lan02"
+      autostart: false
+  ram: "384"
+  vcpu: "1"
+  pscript: "bootstrapvm3.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "lab18vm6"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "dhcp"
+      xarxa: "lan03"
+      autostart: false
+  ram: "384"
+  vcpu: "1"
+  pscript: "bootstrapvm6.sh"
