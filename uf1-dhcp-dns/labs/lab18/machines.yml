@@ -10,7 +10,7 @@
       autostart: true
   ram: "384"
   vcpu: "1"
-  pscript: "bootstrapvm1.sh"
+  pscript: "bootstrap-vm1.sh"
   
 - box:
     vb: "bento/ubuntu-16.04"
@@ -23,7 +23,7 @@
       autostart: true
   ram: "384"
   vcpu: "1"
-  pscript: "bootstrapvm2.sh"
+  pscript: "bootstrap-vm2.sh"
   
 - box:
     vb: "bento/ubuntu-16.04"
@@ -36,7 +36,7 @@
       autostart: false
   ram: "384"
   vcpu: "1"
-  pscript: "bootstrapvm3.sh"
+  pscript: "bootstrap-vm3.sh"
   
 - box:
     vb: "bento/ubuntu-16.04"
@@ -57,7 +57,7 @@
       autostart: true
   ram: "384"
   vcpu: "1"
-  pscript: "bootstrapvm4.sh"
+  pscript: "bootstrap-vm4.sh"
   
 - box:
     vb: "bento/ubuntu-16.04"
@@ -70,7 +70,7 @@
       autostart: false
   ram: "384"
   vcpu: "1"
-  pscript: "bootstrapvm3.sh"
+  pscript: "bootstrap-vm5.sh"
   
 - box:
     vb: "bento/ubuntu-16.04"
@@ -83,4 +83,4 @@
       autostart: false
   ram: "384"
   vcpu: "1"
-  pscript: "bootstrapvm6.sh"
+  pscript: "bootstrap-vm6.sh"

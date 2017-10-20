@@ -64,8 +64,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end # srv.vm.provider 'virtualbox'
 
 ##      srv.vm.provision "shell", path: machine['pscript']
-##      srv.vm.provision :shell, path: machine['pscript']
-      srv.vm.provision :shell, path: "bootstrap-vm1.sh"
+        srv.vm.provision :shell, path: machine['pscript']
+##      srv.vm.provision :shell, path: "bootstrap-vm1.sh"
 
     end # config.vm.define
   end # machines.each
