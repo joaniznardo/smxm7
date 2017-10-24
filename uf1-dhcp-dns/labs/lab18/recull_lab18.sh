@@ -1,7 +1,9 @@
 #!/bin/bash
 
+##
 ## segons Isma: "un fichero que hace cosas"
 ## "...como los catalanes" 
+##
 
 rm -rf out
 mkdir out
