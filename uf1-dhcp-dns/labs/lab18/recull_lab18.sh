@@ -26,7 +26,7 @@ vagrant ssh lab18vm3 -c "ip a | tee /vagrant/out/ip_a.vm3"
 vagrant ssh lab18vm5 -c "ip a | tee /vagrant/out/ip_a.vm5"  
 # mv6
 vagrant ssh lab18vm6 -c "ip a | tee /vagrant/out/ip_a.vm6"  
-tar cvzf puja_m_al_drive.tar.gz out
+tar cvzf puja_m_al_drive_$USER.tar.gz out
 
 
 
