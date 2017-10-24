@@ -20,6 +20,7 @@ vagrant ssh lab18vm4 -c "debconf-get-selections | grep isc | tee debconf.vm4"
 vagrant ssh lab18vm4 -c "cat /proc/sys/net/ipv4/ip_forward | tee /vagrant/out/proc_sys_net_ipv4_ip__forward.vm4"
 vagrant ssh lab18vm4 -c "cat /proc/sys/net/ipv4/conf/all/secure_redirects | tee /vagrant/out/proc_sys_net_ipv4_conf_all_secure__redirects.vm4"
 vagrant ssh lab18vm4 -c "service isc-dhcp-relay status | tee /vagrant/out/relay-status.vm4"
+## els tres passes següents indiquen si ha "arribat" ip als 3 pc que la "demanen"
 # mv3 
 vagrant ssh lab18vm3 -c "ip a | tee /vagrant/out/ip_a.vm3"  
 # mv5
