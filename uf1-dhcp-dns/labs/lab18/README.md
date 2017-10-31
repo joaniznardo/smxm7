@@ -8,3 +8,16 @@
 ## sort
 
 ### nota: revisaré, preguntaré i també provocaré incidències a les vm's :)
+
+## per lliurar (qui no ho haja fet)
+
+## engegar les màquines
+vagrant up lab18vm{1,2,4,3,5,6}
+
+## fer un...
+git pull
+## executar script "recolector"
+./recull_lab18.sh
+
+
+https://goo.gl/jV9pp1
