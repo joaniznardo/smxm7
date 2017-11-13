@@ -1,0 +1,85 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Specify minimum Vagrant version and Vagrant API version
+Vagrant.require_version '>= 1.6.0'
+VAGRANTFILE_API_VERSION = '2'
+
+
+BOX_URL = "http://192.168.0.12/coord/bentoubuntu-16.04"
+
+
+# Require 'yaml' module :DD
+require 'yaml'
+require 'rbconfig'
+
+PROJECT_NAME = '/' + File.basename(Dir.getwd)
+
+# Read YAML file with VM details (box, CPU, RAM, IP addresses)
+# Edit machines.yml to change VM configuration details
+machines = YAML.load_file(File.join(File.dirname(__FILE__), 'machines.yml'))
+
+# Create and configure the VMs
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # Always use Vagrant's default insecure key
+#  config.ssh.insert_key = false
+
+  # Iterate through entries in YAML file to create VMs
+  machines.each do |machine|
+
+    # Configure the VMs per details in machines.yml
+    config.vm.define machine['name'], autostart: machine['vmauto'] do |srv|
+
+      # Don't check for box updates
+      srv.vm.box_check_update = false
+
+      # Specify the hostname of the VM
+      srv.vm.hostname = machine['name']
+
+      # Specify the Vagrant box to use (use VMware box by default)
+      srv.vm.box = machine['box']['vb']
+      srv.vm.box_url = BOX_URL
+
+## afegim sempre la carpeta compartida
+      srv.vm.synced_folder '.', '/vagrant', disabled: false
+      # Configure default synced folder (enabled by default)
+##      if machine['sync_disabled'] != nil
+##        srv.vm.synced_folder '.', '/vagrant', disabled: machine['sync_disabled']
+##      else
+##        srv.vm.synced_folder '.', '/vagrant', disabled: false
+##      end #if machine['sync_disabled']
+
+      # Iterate through networks as per settings in machines.yml
+      machine['nics'].each do |net|
+        if net['ip_addr'] == 'dhcp'
+          srv.vm.network net['type'], type: net['ip_addr'], virtualbox__intnet: net['xarxa'], auto_config: net['autostart']
+        else
+          srv.vm.network net['type'], ip: net['ip_addr'], virtualbox__intnet: net['xarxa'], auto_config: net['autostart']
+        end # if net['ip_addr']
+      end # machine['nics'].each
+## (testing-ok)      srv.vm.network "forwarded_port", guest: 10000, host: 10001, protocol: "tcp", auto_correct: true
+## (testing-ok)     srv.vm.network "forwarded_port", guest: 80, host: 8081, protocol: "tcp", auto_correct: true
+
+
+      # Configure CPU & RAM per settings in machines.yml (VirtualBox)
+      srv.vm.provider 'virtualbox' do |vb, override|
+        vb.name = machine['name']      
+        vb.memory = machine['ram']
+        vb.cpus = machine['vcpu']
+        override.vm.box = machine['box']['vb']
+        vb.linked_clone = true
+        vb.customize ['modifyvm', :id, '--groups', PROJECT_NAME]
+      end # srv.vm.provider 'virtualbox'
+
+##      srv.vm.provision "shell", path: machine['pscript']
+        srv.vm.provision :shell, path: machine['pscript']
+##      srv.vm.provision :shell, path: "bootstrap-vm1.sh"
+
+    end # config.vm.define
+  end # machines.each
+## preparat per activar a nivell de box (plantilla)
+#  if Vagrant.has_plugin?("vagrant-cachier")
+#    config.cache.scope = :box
+#  end
+end # Vagrant.configure

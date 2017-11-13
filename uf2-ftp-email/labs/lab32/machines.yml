@@ -1,0 +1,53 @@
+---
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "labvm1"
+  vmauto: true
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.XXX.101"
+      xarxa: "lan01"
+      autostart: true
+  ram: "256"
+  vcpu: "1"
+  pscript: "boot/bootstrap-vm1.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "labvm2"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.XXX.102"
+      xarxa: "lan01"
+      autostart: true
+  ram: "256"
+  vcpu: "1"
+  pscript: "boot/bootstrap-vm2.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "labvm3"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.XXX.103"
+      xarxa: "lan01"
+      autostart: true
+  ram: "256"
+  vcpu: "1"
+  pscript: "boot/bootstrap-vm3.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "labvm4"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.XXX.104"
+      xarxa: "lan01"
+      autostart: true
+  ram: "256"
+  vcpu: "1"
+  pscript: "boot/bootstrap-vm4.sh"
+  
