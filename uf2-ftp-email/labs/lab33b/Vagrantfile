@@ -40,7 +40,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
       # Specify the Vagrant box to use (use VMware box by default)
       srv.vm.box = machine['box']['vb']
-      if machine['box']['gui'] == true
+      if machine['box']['gui'] == "true"
         srv.vm.box_url = BOX_URL
       else
         srv.vm.box_url = BOX_URL2
@@ -75,6 +75,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         override.vm.box = machine['box']['vb']
         vb.linked_clone = true
         vb.gui = machine['box']['gui']
+      if machine['box']['gui'] == "true"
+        vb.gui = true
+      else
+        vb.gui = false
+      end
         vb.customize ['modifyvm', :id, '--groups', PROJECT_NAME]
       end # srv.vm.provider 'virtualbox'
 
