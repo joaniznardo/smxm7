@@ -24,4 +24,5 @@
 
 - recorda de substituir XXX pel valor assignat al fitxer de xarxes assignades a cada persona.
 
+- pots partir de la resolucio del lab22 que se troba a [aquest_link](https://goo.gl/6xJuzq)
 
