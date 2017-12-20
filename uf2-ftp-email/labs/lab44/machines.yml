@@ -35,7 +35,7 @@
     - scname: "boot/vm4/provision-dovecot.sh"    
     - scname: "boot/vm2/bootstrap-vm2.sh"
     - scname: "boot/vm4/provision.sh"    
-    - scname: "boo/all/99-adjust-systemd-postfix.service.sh"
+    - scname: "boot/vm2/99-adjust-systemd-postfix.service.sh"
   
 - box:
     vb: "bento/ubuntu-16.04"
@@ -69,7 +69,7 @@
     - scname: "boot/vm4/provision-dovecot.sh"    
     - scname: "boot/vm4/bootstrap-vm4.sh"
     - scname: "boot/vm4/provision.sh"    
-    - scname: "boo/all/99-adjust-systemd-postfix.service.sh"
+    - scname: "boot/vm4/99-adjust-systemd-postfix.service.sh"
     
   
 - box:
