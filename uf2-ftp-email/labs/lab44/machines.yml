@@ -38,7 +38,7 @@
     - scname: "boot/vm2/99-adjust-systemd-postfix.service.sh"
   
 - box:
-    vb: "bento/ubuntu-16.04"
+    vb: "boxcutter/ubuntu1604-desktop"
   name: "vm3.left.jda.lab44"
   vmauto: false
   nics:
@@ -46,7 +46,7 @@
       ip_addr: "192.168.48.103"
       xarxa: "lan01"
       autostart: true
-  ram: "256"
+  ram: "1024"
   vcpu: "1"
   pscript:
     - scname: "boot/all/00-bootstrap-all.sh"
@@ -73,7 +73,7 @@
     
   
 - box:
-    vb: "bento/ubuntu-16.04"
+    vb: "boxcutter/ubuntu1604-desktop"
   name: "vm5.right.jda.lab44"
   vmauto: false
   nics:
@@ -81,7 +81,7 @@
       ip_addr: "192.168.49.103"
       xarxa: "lan02"
       autostart: true
-  ram: "256"
+  ram: "1024"
   vcpu: "1"
   pscript:
     - scname: "boot/all/00-bootstrap-all.sh"
