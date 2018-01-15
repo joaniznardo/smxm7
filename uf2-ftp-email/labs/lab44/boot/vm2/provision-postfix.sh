@@ -82,11 +82,11 @@ smtpd_sender_restrictions =
     reject_unknown_sender_domain
 
 smtpd_recipient_restrictions =
+    permit_mynetworks,
+    permit_sasl_authenticated,
     reject_non_fqdn_recipient,
     reject_invalid_hostname,
     reject_unauth_destination,
-    permit_mynetworks,
-    permit_sasl_authenticated,
 ##    permit_sasl_authenticated    
     reject_unknown_client
 
