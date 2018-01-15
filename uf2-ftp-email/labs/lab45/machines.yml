@@ -1,0 +1,88 @@
+---
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "vm1.jda.lab44"
+  vmauto: true
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.48.101"
+      xarxa: "lan01"
+      autostart: true
+    - type: "private_network"
+      ip_addr: "192.168.49.101"
+      xarxa: "lan02"
+      autostart: true
+  ram: "256"
+  vcpu: "1"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+    - scname: "boot/vm1/bootstrap-vm1.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "vm2.left.jda.lab44"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.48.102"
+      xarxa: "lan01"
+      autostart: true
+  ram: "256"
+  vcpu: "1"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+    - scname: "boot/vm2/provision-postfix.sh"
+    - scname: "boot/vm4/provision-dovecot.sh"    
+    - scname: "boot/vm2/bootstrap-vm2.sh"
+    - scname: "boot/vm4/provision.sh"    
+    - scname: "boot/vm2/99-adjust-systemd-postfix.service.sh"
+  
+- box:
+    vb: "boxcutter/ubuntu1604-desktop"
+  name: "vm3.left.jda.lab44"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.48.103"
+      xarxa: "lan01"
+      autostart: true
+  ram: "1024"
+  vcpu: "1"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+    - scname: "boot/vm3/bootstrap-vm3.sh"
+  
+- box:
+    vb: "bento/ubuntu-16.04"
+  name: "vm4.right.jda.lab44"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.49.102"
+      xarxa: "lan02"
+      autostart: true
+  ram: "256"
+  vcpu: "1"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+    - scname: "boot/vm4/provision-postfix.sh"
+    - scname: "boot/vm4/provision-dovecot.sh"    
+    - scname: "boot/vm4/bootstrap-vm4.sh"
+    - scname: "boot/vm4/provision.sh"    
+    - scname: "boot/vm4/99-adjust-systemd-postfix.service.sh"
+    
+  
+- box:
+    vb: "boxcutter/ubuntu1604-desktop"
+  name: "vm5.right.jda.lab44"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.49.103"
+      xarxa: "lan02"
+      autostart: true
+  ram: "1024"
+  vcpu: "1"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+    - scname: "boot/vm5/bootstrap-vm5.sh"
