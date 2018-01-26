@@ -79,7 +79,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.name = machine['name']      
         vb.memory = machine['ram']
         vb.cpus = machine['vcpu']
-<<<<<<< HEAD
 ##
 ## treure comentaris si és necessari
 ##        vb.gui = true
@@ -88,9 +87,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         else
           vb.gui = false
         end 
-=======
-        vb.gui = true
->>>>>>> 80332fa734f0cc1a3ed1c1e03ce5191176f414b9
         override.vm.box = machine['box']['vb']
         vb.linked_clone = true
         vb.customize ['modifyvm', :id, '--groups', PROJECT_NAME]
