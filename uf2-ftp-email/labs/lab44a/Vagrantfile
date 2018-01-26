@@ -5,10 +5,9 @@
 Vagrant.require_version '>= 1.6.0'
 VAGRANTFILE_API_VERSION = '2'
 
-DEFAULT_BASE_BOX = "bento/ubuntu-16.04"
-DEFAULT_BASE_BOX_URL = "http://192.168.0.12/coord/bentoubuntu-16.04"
-# outside 
-## DEFAULT_BASE_BOX_URL = "http://insjoandaustria.xtec.cat/coord/bentoubuntu-16.04"
+
+BOX_URL = "http://192.168.0.12/coord/bentoubuntu-16.04"
+
 
 # Require 'yaml' module :DD
 require 'yaml'
@@ -16,21 +15,12 @@ require 'rbconfig'
 
 PROJECT_NAME = '/' + File.basename(Dir.getwd)
 
-# Read YAML file with VM details (box, CPU, RAM, IP addresses...)
+# Read YAML file with VM details (box, CPU, RAM, IP addresses)
 # Edit machines.yml to change VM configuration details
 machines = YAML.load_file(File.join(File.dirname(__FILE__), 'machines.yml'))
 
 # Create and configure the VMs
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-
-## http://fgrehm.viewdocs.io/vagrant-cachier/
-## preparat per activar a nivell de box (plantilla)
-## en cas de probemes (multi-machine), activar a nivell de màquina
-## revisar també si la carpeta compartida dona problemes i passar-la a nfs
-  if Vagrant.has_plugin?("vagrant-cachier")
-    config.cache.scope = :box
-##     config.cache.scope = :machine
-  end
 
   # Always use Vagrant's default insecure key
 #  config.ssh.insert_key = false
@@ -47,11 +37,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       # Specify the hostname of the VM
       srv.vm.hostname = machine['name']
 
-      # Specify the Vagrant box to use
-      ## valors per defecte o valors passats. Exemples a:
-      ## http://bertvv.github.io/notes-to-self/2015/10/05/one-vagrantfile-to-rule-them-all/
-      srv.vm.box = machine['box']['vb'] ||= DEFAULT_BASE_BOX 
-      srv.vm.box_url = machine['box']['b_url'] ||= DEFAULT_BASE_BOX_URL 
+      # Specify the Vagrant box to use (use VMware box by default)
+      srv.vm.box = machine['box']['vb']
+      srv.vm.box_url = BOX_URL
 
 ## afegim sempre la carpeta compartida
       srv.vm.synced_folder '.', '/vagrant', disabled: false
@@ -79,14 +67,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         vb.name = machine['name']      
         vb.memory = machine['ram']
         vb.cpus = machine['vcpu']
-##
-## treure comentaris si és necessari
-##        vb.gui = true
-        if machine['gui'] == 'yes'
-          vb.gui = true
-        else
-          vb.gui = false
-        end 
+        vb.gui = true
         override.vm.box = machine['box']['vb']
         vb.linked_clone = true
         vb.customize ['modifyvm', :id, '--groups', PROJECT_NAME]
