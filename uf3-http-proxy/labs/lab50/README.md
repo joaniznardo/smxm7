@@ -9,3 +9,27 @@
 - accedeix al servidor web de la vm2 des de la vm5 mitjançant el navegador firefox: www.left.jda.lab50
 - canvia la pàgina d'inici per una que mostre el teu nom i 1er cognom
 - analitza el codi que ens ha permet fer aquest lab: fitxers de boot i de conf
+
+# LAB 51
+
+- objectiu: accés a dues webs separades amb amb mateix servidor: virtual hosts
+
+- accedeix a www.left.jda.lab50 i blog.left.jda.lab50 i mostra que són webs separades i diferents
+
+# LAB 52
+
+- objectiu: limitar l'accés a un subdirectori a través de htaccess
+
+- Fer que per accedir al directori de www.left.jda.lab50/admin calga identificar-se amb usuari i contrassenya
+
+# LAB 53
+
+- objectiu: access segur a la web
+
+- fer que a la web wiki.left.jda.lab50 se puga accedir pel port 443: https
+
+# LAB 53B
+
+- objectiu: generar-se de manera correcta el certificat "auto-signat"
+
+- autogenerar-se el certificat d'encriptació ssl, emplaçar-lo al lloc correcte i fer-lo servir al servidor apache quan s'accedeix a wiki.left.jda.lab50
