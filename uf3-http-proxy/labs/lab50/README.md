@@ -33,3 +33,10 @@
 - objectiu: generar-se de manera correcta el certificat "auto-signat"
 
 - autogenerar-se el certificat d'encriptació ssl, emplaçar-lo al lloc correcte i fer-lo servir al servidor apache quan s'accedeix a wiki.left.jda.lab50
+
+# LAB 54
+
+- objectiu: permetre l'ús de directoris personals a la web www.left.jda.lab50
+
+- crea dos comptes al sistema operatiu, amb carpeta privada al /home i fes que els directoris public_html dels comptes sigues accessibles mitjançant www.left.jda.lab50\~compte_nou_{01,02}
+
