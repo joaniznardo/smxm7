@@ -37,15 +37,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 ## preparat per activar a nivell de box (plantilla)
 ## en cas de probemes (multi-machine), activar a nivell de màquina
 ## revisar també si la carpeta compartida dona problemes i passar-la a nfs
-  if Vagrant.has_plugin?("vagrant-cachier")
-    config.cache.scope = :box
-##     config.cache.scope = :machine
-    config.cache.synced_folder_opts = {
-      owner: "_apt",
-      group: "vagrant"
-    }
-  end
-
+##   if Vagrant.has_plugin?("vagrant-cachier")
+##     config.cache.scope = :box
+## ##     config.cache.scope = :machine
+##     config.cache.synced_folder_opts = {
+##       owner: "_apt",
+##       group: "vagrant"
+##     }
+##   end
+## 
   # Always use Vagrant's default insecure key
 #  config.ssh.insert_key = false
 
