@@ -16,6 +16,8 @@
 
 - accedeix a www.left.jda.lab50 i blog.left.jda.lab50 i mostra que són webs separades i diferents
 
+- https://goo.gl/RXj124
+
 # LAB 52
 
 - objectiu: limitar l'accés a un subdirectori a través de htaccess
