@@ -1,0 +1,7 @@
+classe,id,membres,xarxa_1,xarxa_2,xarxa_3,xarxa_4,domini1,domini2
+a,a1,"jose, iris, isha, joaquin",10.0.1.0/24,10.0.2.0/24,10.10.0.0/24,10.20.0.0/24,joaquin.finestra01.net,isha.finestra01.net
+a,a2,"nat, pol, pau, adri",10.0.3.0/24,10.0.4.0/24,10.30.0.0/24,10.40.0.0/24,nat.passadis01.org,pol.passadis01.org
+a,a3,"marc anta, javi, nico",10.0.5.0/24,10.0.6.0/24,10.50.0.0/24,10.60.0.0/24,marc.finestra02.test,javi.finestra02.test
+a,a4,"esteban, marc alcaraz, roger",10.0.7.0/24,10.0.8.0/24,10.70.0.0/24,10.80.0.0/24,esteban.passadis02.net,roger.passadis02.net
+a,a5,"hugo, raul",10.0.9.0/24,10.0.10.0/24,10.90.0.0/24,10.100.0.0/24,hugo.finestra03.org,raul.finestra03.org
+a,a6,"sergi, yifei, roman",10.0.11.0/24,10.0.12.0/24,10.110.0.0/24,10.120.0.0/24,sergi.passadis03.test,yifei.passadis03.test
