@@ -38,3 +38,4 @@ Avaluació:
 
 extra point:
 - organització de l'equip amb bitbucket
+- ajuda: https://www.youtube.com/watch?v=QGKTdL7GG24
