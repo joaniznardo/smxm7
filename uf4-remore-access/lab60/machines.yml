@@ -1,7 +1,7 @@
 ---
 - box:
     vb: "lubuntu_201804"
-  b_url: "http://192.168.0.12/coord/lubuntu_201804.box"
+  b_url: "http://192.168.0.12/coord/lubuntu.box"
   name: "server.jda.lab60"
   vmauto: true
   nics:
@@ -17,7 +17,7 @@
   
 - box:
     vb: "lubuntu_201804"
-  b_url: "http://192.168.0.12/coord/lubuntu_201804.box"
+  b_url: "http://192.168.0.12/coord/lubuntu.box"
   name: "client.jda.lab60"
   vmauto: false
   nics:
