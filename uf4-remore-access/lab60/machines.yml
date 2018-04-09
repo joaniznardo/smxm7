@@ -1,6 +1,6 @@
 ---
 - box:
-    vb: "lubuntu_201804"
+    vb: "lubuntu"
   b_url: "http://192.168.0.12/coord/lubuntu.box"
   name: "server.jda.lab60"
   vmauto: true
@@ -16,7 +16,7 @@
     - scname: "boot/all/00-bootstrap-all.sh"
   
 - box:
-    vb: "lubuntu_201804"
+    vb: "lubuntu"
   b_url: "http://192.168.0.12/coord/lubuntu.box"
   name: "client.jda.lab60"
   vmauto: false
