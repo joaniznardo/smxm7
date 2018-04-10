@@ -2,7 +2,7 @@
 - box:
     vb: "lubuntu"
   b_url: "http://192.168.0.12/coord/lubuntu.box"
-  name: "server.jda.lab60"
+  name: "server01.jda.lab60"
   vmauto: true
   nics:
     - type: "private_network"
@@ -18,11 +18,73 @@
 - box:
     vb: "lubuntu"
   b_url: "http://192.168.0.12/coord/lubuntu.box"
-  name: "client.jda.lab60"
+  name: "client01.jda.lab60"
   vmauto: false
   nics:
     - type: "private_network"
       ip_addr: "192.168.48.102"
+      xarxa: "lan01"
+      autostart: true
+  ram: "512"
+  vcpu: "1"
+  gui: "yes"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+- box:
+    vb: "lubuntu"
+  b_url: "http://192.168.0.12/coord/lubuntu.box"
+  name: "server02.jda.lab60"
+  vmauto: true
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.48.103"
+      xarxa: "lan01"
+      autostart: true
+  ram: "512"
+  vcpu: "1"
+  gui: "yes"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+  
+- box:
+    vb: "lubuntu"
+  b_url: "http://192.168.0.12/coord/lubuntu.box"
+  name: "client02.jda.lab60"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.48.104"
+      xarxa: "lan01"
+      autostart: true
+  ram: "512"
+  vcpu: "1"
+  gui: "yes"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+- box:
+    vb: "lubuntu"
+  b_url: "http://192.168.0.12/coord/lubuntu.box"
+  name: "server03.jda.lab60"
+  vmauto: true
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.48.105"
+      xarxa: "lan01"
+      autostart: true
+  ram: "512"
+  vcpu: "1"
+  gui: "yes"
+  pscript:
+    - scname: "boot/all/00-bootstrap-all.sh"
+  
+- box:
+    vb: "lubuntu"
+  b_url: "http://192.168.0.12/coord/lubuntu.box"
+  name: "client03.jda.lab60"
+  vmauto: false
+  nics:
+    - type: "private_network"
+      ip_addr: "192.168.48.106"
       xarxa: "lan01"
       autostart: true
   ram: "512"
